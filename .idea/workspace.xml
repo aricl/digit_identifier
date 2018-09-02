@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cad5496-aee3-40d5-9a34-dfa3ac3e9eea" name="Default Changelist" comment="First commit only added README. Second commit will hopefully add the remaining project files">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hidden_layer_neuron.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/__config__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/__config__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/_globals.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/_globals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/add_newdocs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/add_newdocs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ctypeslib.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ctypeslib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/byteswapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/byteswapping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/glossary.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/glossary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/misc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/structured_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/structured_arrays.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/subclassing.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/doc/subclassing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/fftpack.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/fftpack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/fftpack_lite.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/fftpack_lite.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/tests/test_fftpack.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/tests/test_fftpack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/tests/test_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/fft/tests/test_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/_version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/arraypad.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/arraypad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/format.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/format.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/index_tricks.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/index_tricks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/mixins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/nanfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/nanfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/polynomial.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/polynomial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/recfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/recfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/scimath.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/scimath.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/shape_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/shape_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/stride_tricks.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/stride_tricks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/twodim_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/lib/twodim_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/bench.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/bench.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_deprecations.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_deprecations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_mrecords.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_mrecords.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_old_ma.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_old_ma.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_subclassing.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/tests/test_subclassing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/testutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/ma/testutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/numpy/version.py" afterDir="false" />
-    </list>
+    <list default="true" id="0cad5496-aee3-40d5-9a34-dfa3ac3e9eea" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +66,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitattributes" value="1" />
+          <entry key="gitignore" value="1" />
           <entry key="py" value="3" />
           <entry key="pyi" value="1" />
           <entry key="txt" value="1" />
@@ -126,7 +74,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="3" />
           <entry key="PythonStub" value="1" />
         </counts>
@@ -134,13 +82,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
+          <entry key="gitignore" value="4" />
           <entry key="py" value="3204" />
           <entry key="txt" value="220" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="221" />
+          <entry key="PLAIN_TEXT" value="225" />
           <entry key="Python" value="3204" />
         </counts>
       </usages-collector>
@@ -151,6 +100,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitattributes">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -183,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="196">
+              <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -215,6 +173,8 @@
         <option value="$PROJECT_DIR$/activation_function.py" />
         <option value="$PROJECT_DIR$/hidden_layer_neuron.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -404,11 +364,19 @@
       <option name="project" value="LOCAL" />
       <updated>1535879990203</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First commit only added README. Second commit will hopefully add the remaining project files">
+      <created>1535881674254</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1535881674254</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28594506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -491,7 +459,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="The first commit on remote only populated the README. Hopefully this will add the project files as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="The first commit on remote only populated the README. Hopefully this will add the project files as well" />
+    <MESSAGE value="First commit only added README. Second commit will hopefully add the remaining project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit only added README. Second commit will hopefully add the remaining project files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
@@ -538,8 +507,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="196">
+          <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>
