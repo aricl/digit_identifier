@@ -1,6 +1,8 @@
 import numpy as np
 from types import *
 
+from hidden_layer_neuron import HiddenLayerNeuron
+
 
 class Network:
 
@@ -22,6 +24,18 @@ class Network:
         # Check that the dimensions of weights of the hidden and output
         # layers match up in the correct way.
 
+        for neuron in output_layer_neurons:
+            last_hidden_layer_neurons = hidden_layer_neurons[-1]
+            if len(last_hidden_layer_neurons) != neuron.get_first_weights_dimension():
+                print(len(last_hidden_layer_neurons), neuron.get_first_weights_dimension())
+                raise ValueError(
+                    "The final hidden layer has {0} neurons but the output layer neurons require {1} inputs. These "
+                    "values should be equal.".format(
+                        len(last_hidden_layer_neurons),
+                        neuron.get_first_weights_dimension()
+                    )
+                )
+
         self.hidden_layer_neurons = hidden_layer_neurons
         self.output_layer_neurons = output_layer_neurons
 
@@ -32,6 +46,16 @@ class Network:
         # the input data, getting those outputs, and feeding those to the output layer neurons.
         # We need to feed the output of each hidden layer to the next hidden layer, then feed
         # the output of the final hidden layer into the output layer
+
+        for hidden_layer in self.hidden_layer_neurons:
+            for neuron in hidden_layer:  # type: HiddenLayerNeuron
+                if neuron.get_first_weights_dimension() != len(input_data):
+                    raise ValueError(
+                        "The input_data {0} and weights {1} array dimensions do not match".format(
+                            len(input_data),
+                            neuron.get_first_weights_dimension()
+                        )
+                    )
 
         hidden_layer_outputs = [
             [
