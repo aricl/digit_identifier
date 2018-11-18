@@ -3,32 +3,47 @@ from types import *
 
 
 class Network:
+
     def __init__(
             self,
-            number_of_input_neurons,
-            hidden_layer_neuron_distribution,
-            number_of_output_neurons
+            hidden_layer_neurons,
+            output_layer_neurons
     ):
+        # type: (ListType, ListType) -> None
         """
-        Sets up the Network by specifying the number of input
-        neurons, the number of output neurons, the number of
-        hidden layers, and the number of neurons in each hidden
-        layer. The last two sets of information are obtained from
-        the hidden_layer_neuron_distribution, which is an array
-        of integers. Each integer specifies the number of neurons
-        in each hidden layer. The order of the integers must match
-        the order of the hidden layers with the first being the hidden
-        layer directly connected to the input layer, and the last being
-        the hidden layer connected to the output layer.
-        :param number_of_input_neurons:
-        :param hidden_layer_neuron_distribution:
-        :param number_of_output_neurons:
+        Sets up the Network by taking in a nested list of hidden
+        layer neurons and a list of output neurons.
+        :param hidden_layer_neurons:
+        :param output_layer_neurons:
         """
-        assert type(number_of_input_neurons) is IntType
-        assert type(number_of_output_neurons) is IntType
-        assert type(hidden_layer_neuron_distribution) is np.ndarray
+        assert type(hidden_layer_neurons) is ListType
+        assert type(output_layer_neurons) is ListType
 
-        self.number_of_input_neurons = number_of_input_neurons
-        self.number_of_output_neurons = number_of_output_neurons
-        self.number_of_hidden_layers = np.alen(hidden_layer_neuron_distribution)
-        self.hidden_layer_neuron_distribution = hidden_layer_neuron_distribution
+        # Check that the dimensions of weights of the hidden and output
+        # layers match up in the correct way.
+
+        self.hidden_layer_neurons = hidden_layer_neurons
+        self.output_layer_neurons = output_layer_neurons
+
+    def output(self, input_data):
+        # type: (np.ndarray) -> float
+
+        # TODO: Currently this is just looping over the first hidden layer, feeding each neuron
+        # the input data, getting those outputs, and feeding those to the output layer neurons.
+        # We need to feed the output of each hidden layer to the next hidden layer, then feed
+        # the output of the final hidden layer into the output layer
+
+        hidden_layer_outputs = [
+            [
+                neuron.output(input_data)
+                for neuron in hidden_layer
+            ]
+            for hidden_layer in self.hidden_layer_neurons
+        ]
+
+        output_layer_outputs = [
+            neuron.output(hidden_layer_outputs[0])
+            for neuron in self.output_layer_neurons
+        ]
+
+        return output_layer_outputs[0]

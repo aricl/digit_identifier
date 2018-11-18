@@ -7,12 +7,15 @@ class HiddenLayerNeuron:
         """
         Constructs a hidden layer neuron by specifying its
         weights, bias, and the activation function it uses.
-        :param weights: np.ndarray
+        :param weights: ListType
         :param bias: float
         :param activation_function_input:
         """
-        assert type(weights) is np.ndarray
-        assert type(bias) is FloatType
+        assert type(weights) is np.ndarray, 'The weights provided to the HiddenLayer Neuron are not an ndarray, ' \
+                                            'they are %r' % type(weights)
+        assert isinstance(bias,
+                          (float, np.float64)), 'The bias provided to the HiddenLayer Neuron is not an float, ' \
+                                                'it is a %r' % type(bias)
 
         self.weights = weights
         self.bias = bias

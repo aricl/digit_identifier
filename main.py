@@ -1,6 +1,7 @@
-import activation_function
-import hidden_layer_neuron
+from activation_function import sigmoid
+from hidden_layer_neuron import HiddenLayerNeuron
 import numpy as np
+from network_builder import NetworkBuilder
 
 if __name__ == '__main__':
     number_of_inputs = 10
@@ -17,10 +18,10 @@ if __name__ == '__main__':
     ]
 
     hidden_layer_neurons = [
-        hidden_layer_neuron.HiddenLayerNeuron(
+        HiddenLayerNeuron(
             hidden_layer_weights[i],
             hidden_layer_biases[i],
-            activation_function.sigmoid()
+            sigmoid()
         )
         for i in range(0, number_of_hidden_neurons)
     ]
@@ -32,10 +33,19 @@ if __name__ == '__main__':
 
     output_neuron_weights = np.random.uniform(0, 1, number_of_hidden_neurons)
     output_neuron_bias = np.random.uniform(-5, 0)
-    output_neuron = hidden_layer_neuron.HiddenLayerNeuron(
+    output_neuron = HiddenLayerNeuron(
         output_neuron_weights,
         output_neuron_bias,
-        activation_function.sigmoid()
+        sigmoid()
     )
 
-    print(output_neuron.output(hidden_layer_neurons_output))
+    network = NetworkBuilder().add_input_layer(number_of_inputs)\
+        .add_hidden_layer(len(hidden_layer_weights), hidden_layer_weights, hidden_layer_biases)\
+        .add_output_layer(
+            1,
+            np.array([output_neuron_weights]),
+            np.array([output_neuron_bias])
+        )\
+        .build_network()
+
+    print(network.output(np.random.uniform(0, 1, number_of_inputs)))
