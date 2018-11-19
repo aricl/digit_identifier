@@ -8,9 +8,9 @@ import numpy as np
 class NetworkBuilder:
     def __init__(self):
         self._number_of_input_neurons = None
-        self._hidden_layer_distribution = {}
-        self._hidden_layer_weights = {}
-        self._hidden_layer_biases = {}
+        self._hidden_layers_distribution = {}
+        self._hidden_layers_weights = {}
+        self._hidden_layers_biases = {}
         self._number_of_output_neurons = None
         self._output_neuron_weights = {}
         self._output_neuron_biases = {}
@@ -47,13 +47,31 @@ class NetworkBuilder:
                 )
             )
 
-        # TODO: Check that the dimensions of each weights array are correct, i.e. that their first
-        # dimension is the same as the dimension of the previous set of weights' second
-        # dimension (or the input layer's dimension if it is the first hidden layer).
+        hidden_layer_weights_dimension = len(hidden_layer_weights[0])
+        if len(self._hidden_layers_weights) == 0:
+            if hidden_layer_weights_dimension != self._number_of_input_neurons:
+                raise ValueError(
+                    'The dimension of the weights array in the hidden layer {0} and the number of inputs {1} do not '
+                    'match.'.format(
+                        hidden_layer_weights_dimension,
+                        self._number_of_input_neurons
+                    )
+                )
+        else:
+            previous_hidden_layer_key = len(self._hidden_layers_weights) - 1
+            number_of_neurons_in_previous_hidden_layer = len(self._hidden_layers_weights[previous_hidden_layer_key])
+            if hidden_layer_weights_dimension != number_of_neurons_in_previous_hidden_layer:
+                raise ValueError(
+                    'The dimension of the weights array in the hidden layer {0} and number of neurons in the previous '
+                    'hidden array {1} do not match.'.format(
+                        hidden_layer_weights_dimension,
+                        number_of_neurons_in_previous_hidden_layer
+                    )
+                )
 
-        self._hidden_layer_distribution.update({len(self._hidden_layer_distribution)-1: number_of_neurons})
-        self._hidden_layer_weights.update({len(self._hidden_layer_weights)-1: hidden_layer_weights})
-        self._hidden_layer_biases.update({len(self._hidden_layer_biases)-1: hidden_layer_biases})
+        self._hidden_layers_distribution.update({len(self._hidden_layers_distribution): number_of_neurons})
+        self._hidden_layers_weights.update({len(self._hidden_layers_weights): hidden_layer_weights})
+        self._hidden_layers_biases.update({len(self._hidden_layers_biases): hidden_layer_biases})
 
         return self
 
@@ -63,8 +81,17 @@ class NetworkBuilder:
         assert type(output_layer_weights) is np.ndarray
         assert type(output_layer_biases) is np.ndarray
 
-        # TODO: Check that the dimensions of the weights of the output layer match those of the last
-        # hidden layer neurons' weights
+        output_layer_weights_dimension = len(output_layer_weights[0])
+        hidden_layer_key = len(self._hidden_layers_weights) - 1
+        number_of_neurons_in_nearest_hidden_layer = len(self._hidden_layers_weights[hidden_layer_key])
+        if output_layer_weights_dimension != number_of_neurons_in_nearest_hidden_layer:
+            raise ValueError(
+                'The dimension of the weights array in the output layer {0} and number of neurons in the nearest '
+                'hidden array {1} do not match.'.format(
+                    output_layer_weights_dimension,
+                    number_of_neurons_in_nearest_hidden_layer
+                )
+            )
 
         self._number_of_output_neurons = number_of_neurons
         self._output_neuron_weights = output_layer_weights
@@ -85,13 +112,13 @@ class NetworkBuilder:
         hidden_layer_neurons = [
             [
                 HiddenLayerNeuron(
-                    self._hidden_layer_weights[key][i],
-                    self._hidden_layer_biases[key][i],
+                    self._hidden_layers_weights[key][i],
+                    self._hidden_layers_biases[key][i],
                     sigmoid()
                 )
                 for i in range(0, number_of_neurons)
             ]
-            for key, number_of_neurons in self._hidden_layer_distribution.iteritems()
+            for key, number_of_neurons in self._hidden_layers_distribution.iteritems()
         ]
 
         output_layer_neurons = [

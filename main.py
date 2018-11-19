@@ -39,8 +39,9 @@ if __name__ == '__main__':
         sigmoid()
     )
 
-    network = NetworkBuilder().add_input_layer(number_of_inputs)\
-        .add_hidden_layer(len(hidden_layer_weights), hidden_layer_weights, hidden_layer_biases)\
+    network = NetworkBuilder()\
+        .add_input_layer(number_of_inputs)\
+        .add_hidden_layer(len(hidden_layer_weights), hidden_layer_weights, hidden_layer_biases) \
         .add_output_layer(
             1,
             np.array([output_neuron_weights]),
