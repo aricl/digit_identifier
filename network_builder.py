@@ -2,7 +2,6 @@ from types import *
 from hidden_layer_neuron import HiddenLayerNeuron
 from activation_function import sigmoid
 from network import Network
-import numpy as np
 
 
 class NetworkBuilder:
@@ -17,16 +16,16 @@ class NetworkBuilder:
 
     def add_input_layer(self, number_of_neurons):
         # type: (IntType) -> NetworkBuilder
-        assert type(number_of_neurons) is IntType
+        assert type(number_of_neurons) is IntType, 'The number of input neurons passed is not an integer'
         self._number_of_input_neurons = number_of_neurons
 
         return self
 
     def add_hidden_layer(self, number_of_neurons, hidden_layer_weights, hidden_layer_biases):
         # type: (int, ListType, ListType) -> NetworkBuilder
-        assert type(number_of_neurons) is IntType
-        assert type(hidden_layer_weights) is ListType
-        assert type(hidden_layer_biases) is ListType
+        assert type(number_of_neurons) is IntType, 'The number of hidden layer neurons passed is not an integer'
+        assert type(hidden_layer_weights) is ListType, 'The hidden layer weights passed is not a list'
+        assert type(hidden_layer_biases) is ListType, 'The hidden layer biases passed is not a list'
 
         if self._number_of_input_neurons is None:
             raise ValueError(
@@ -76,10 +75,10 @@ class NetworkBuilder:
         return self
 
     def add_output_layer(self, number_of_neurons, output_layer_weights, output_layer_biases):
-        # type: (int, np.ndarray, np.ndarray) -> NetworkBuilder
-        assert type(number_of_neurons) is IntType
-        assert type(output_layer_weights) is np.ndarray
-        assert type(output_layer_biases) is np.ndarray
+        # type: (int, ListType, ListType) -> NetworkBuilder
+        assert type(number_of_neurons) is IntType, 'The number of output neurons passed is not an integer'
+        assert type(output_layer_weights) is ListType, 'The output layer weights passed is not a list'
+        assert type(output_layer_biases) is ListType, 'The output layer biases passes is not a list'
 
         output_layer_weights_dimension = len(output_layer_weights[0])
         hidden_layer_key = len(self._hidden_layers_weights) - 1

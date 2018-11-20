@@ -18,8 +18,8 @@ class Network:
         :param hidden_layer_neurons:
         :param output_layer_neurons:
         """
-        assert type(hidden_layer_neurons) is ListType
-        assert type(output_layer_neurons) is ListType
+        assert type(hidden_layer_neurons) is ListType, 'The hidden layer neurons passed is not a list'
+        assert type(output_layer_neurons) is ListType, 'The output layer neurons passed is not a list'
 
         # Check that the dimensions of weights of the hidden and output
         # layers match up in the correct way.
@@ -36,38 +36,39 @@ class Network:
                     )
                 )
 
-        self.hidden_layer_neurons = hidden_layer_neurons
-        self.output_layer_neurons = output_layer_neurons
+        self._hidden_layer_neurons = hidden_layer_neurons
+        self._output_layer_neurons = output_layer_neurons
 
     def output(self, input_data):
-        # type: (np.ndarray) -> float
+        # type: (np.ndarray) -> ListType
+        assert type(input_data) is np.ndarray, 'The input data passed is not an np.ndarray'
 
-        # TODO: Currently this is just looping over the first hidden layer, feeding each neuron
-        # the input data, getting those outputs, and feeding those to the output layer neurons.
-        # We need to feed the output of each hidden layer to the next hidden layer, then feed
-        # the output of the final hidden layer into the output layer
-
-        for hidden_layer in self.hidden_layer_neurons:
+        number_of_neurons_in_previous_layer = len(input_data)
+        for hidden_layer in self._hidden_layer_neurons:
             for neuron in hidden_layer:  # type: HiddenLayerNeuron
-                if neuron.get_first_weights_dimension() != len(input_data):
+                first_dimension_of_current_weights = neuron.get_first_weights_dimension()
+                if first_dimension_of_current_weights != number_of_neurons_in_previous_layer:
                     raise ValueError(
-                        "The input_data {0} and weights {1} array dimensions do not match".format(
-                            len(input_data),
-                            neuron.get_first_weights_dimension()
+                        "The number of neurons in the previous layer {0} "
+                        "and weights first dimension {1} do not match".format(
+                            first_dimension_of_current_weights,
+                            number_of_neurons_in_previous_layer
                         )
                     )
+            number_of_neurons_in_previous_layer = len(hidden_layer)
 
-        hidden_layer_outputs = [
-            [
-                neuron.output(input_data)
+        input_values = input_data
+        output_values = []
+        for hidden_layer in self._hidden_layer_neurons:
+            output_values = [
+                neuron.output(input_values)
                 for neuron in hidden_layer
             ]
-            for hidden_layer in self.hidden_layer_neurons
-        ]
+            input_values = output_values
 
         output_layer_outputs = [
-            neuron.output(hidden_layer_outputs[0])
-            for neuron in self.output_layer_neurons
+            neuron.output(output_values)
+            for neuron in self._output_layer_neurons
         ]
 
-        return output_layer_outputs[0]
+        return output_layer_outputs
