@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class HiddenLayerNeuron:
+class HiddenOrOutputLayerNeuron:
     _activation_function = None  # type: function
     _bias = None  # type: float
     _weights = None  # type: np.ndarray

@@ -1,5 +1,5 @@
 from types import *
-from hidden_layer_neuron import HiddenLayerNeuron
+from hidden_or_output_layer_neuron import HiddenOrOutputLayerNeuron
 from activation_function import sigmoid
 from network import Network
 
@@ -110,7 +110,7 @@ class NetworkBuilder:
 
         hidden_layer_neurons = [
             [
-                HiddenLayerNeuron(
+                HiddenOrOutputLayerNeuron(
                     self._hidden_layers_weights[key][i],
                     self._hidden_layers_biases[key][i],
                     sigmoid()
@@ -121,7 +121,7 @@ class NetworkBuilder:
         ]
 
         output_layer_neurons = [
-            HiddenLayerNeuron(
+            HiddenOrOutputLayerNeuron(
                 self._output_neuron_weights[i],
                 self._output_neuron_biases[i],
                 sigmoid()

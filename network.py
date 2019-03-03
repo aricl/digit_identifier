@@ -1,7 +1,6 @@
 import numpy as np
 from types import *
-
-from hidden_layer_neuron import HiddenLayerNeuron
+from hidden_or_output_layer_neuron import HiddenOrOutputLayerNeuron
 
 
 class Network:
@@ -45,7 +44,7 @@ class Network:
 
         number_of_neurons_in_previous_layer = len(input_data)
         for hidden_layer in self._hidden_layer_neurons:
-            for neuron in hidden_layer:  # type: HiddenLayerNeuron
+            for neuron in hidden_layer:  # type: HiddenOrOutputLayerNeuron
                 first_dimension_of_current_weights = neuron.get_first_weights_dimension()
                 if first_dimension_of_current_weights != number_of_neurons_in_previous_layer:
                     raise ValueError(

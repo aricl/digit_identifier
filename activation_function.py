@@ -1,12 +1,13 @@
-import numpy as np
+import bigfloat
 
 
 def sigmoid():
     """
     Returns a lambda function that takes the form of the sigmoid function.
+    The package bigfloat is used to get more precision
     :return: float
     """
-    return lambda z: 1 / (1 + np.exp(-z))
+    return lambda z: float(1 / (1 + bigfloat.exp(z, bigfloat.precision(100))))
 
 
 def perceptron():
