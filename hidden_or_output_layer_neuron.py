@@ -2,11 +2,11 @@ import numpy as np
 
 
 class HiddenOrOutputLayerNeuron:
-    _activation_function = None  # type: function
-    _bias = None  # type: float
-    _weights = None  # type: np.ndarray
+    _activation_function = None
+    _bias: float = None
+    _weights: np.ndarray = None
 
-    def __init__(self, weights, bias, activation_function_input):
+    def __init__(self, weights: np.ndarray, bias: float, activation_function_input):
         """
         Constructs a hidden layer neuron by specifying its
         weights, bias, and the activation function it uses.
@@ -14,19 +14,11 @@ class HiddenOrOutputLayerNeuron:
         :param bias: float
         :param activation_function_input:
         """
-        assert type(weights) is np.ndarray, 'The weights provided to the HiddenLayer Neuron are not an ndarray, ' \
-                                            'they are %r' % type(weights)
-        assert isinstance(
-            bias,
-            (float, np.float64)
-        ), 'The bias provided to the HiddenLayer Neuron is not an float, ' \
-           'it is a %r' % type(bias)
-
         self._weights = weights
         self._bias = bias
         self._activation_function = activation_function_input
 
-    def output(self, input_data):
+    def output(self, input_data: list) -> float:
         """
         Takes input data, a numpy array of the same dimensionality as the weights
         and returns the dot product of those two arrays plus the bias.
@@ -46,6 +38,5 @@ class HiddenOrOutputLayerNeuron:
 
         return compressed_output
 
-    def get_first_weights_dimension(self):
-        # type: () -> tuple
+    def get_first_weights_dimension(self) -> tuple:
         return self._weights.shape[0]

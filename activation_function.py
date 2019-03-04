@@ -1,4 +1,4 @@
-import bigfloat
+import numpy as np
 
 
 def sigmoid():
@@ -7,7 +7,7 @@ def sigmoid():
     The package bigfloat is used to get more precision
     :return: float
     """
-    return lambda z: float(1 / (1 + bigfloat.exp(z, bigfloat.precision(100))))
+    return lambda z: float(1 / (1 + np.exp(z)))
 
 
 def perceptron():

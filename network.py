@@ -1,5 +1,3 @@
-import numpy as np
-from types import *
 from hidden_or_output_layer_neuron import HiddenOrOutputLayerNeuron
 
 
@@ -7,19 +5,15 @@ class Network:
 
     def __init__(
             self,
-            hidden_layer_neurons,
-            output_layer_neurons
+            hidden_layer_neurons: list,
+            output_layer_neurons: list
     ):
-        # type: (ListType, ListType) -> None
         """
         Sets up the Network by taking in a nested list of hidden
         layer neurons and a list of output neurons.
         :param hidden_layer_neurons:
         :param output_layer_neurons:
         """
-        assert type(hidden_layer_neurons) is ListType, 'The hidden layer neurons passed is not a list'
-        assert type(output_layer_neurons) is ListType, 'The output layer neurons passed is not a list'
-
         # Check that the dimensions of weights of the hidden and output
         # layers match up in the correct way.
 
@@ -38,10 +32,7 @@ class Network:
         self._hidden_layer_neurons = hidden_layer_neurons
         self._output_layer_neurons = output_layer_neurons
 
-    def output(self, input_data):
-        # type: (np.ndarray) -> ListType
-        assert type(input_data) is np.ndarray, 'The input data passed is not an np.ndarray'
-
+    def output(self, input_data: list):
         number_of_neurons_in_previous_layer = len(input_data)
         for hidden_layer in self._hidden_layer_neurons:
             for neuron in hidden_layer:  # type: HiddenOrOutputLayerNeuron

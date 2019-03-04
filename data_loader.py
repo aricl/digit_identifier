@@ -1,6 +1,5 @@
-import cPickle
+import pickle
 import gzip
-from types import *
 import numpy as np
 
 
@@ -24,7 +23,7 @@ def load_data():
     :return:
     """
     file_to_be_loaded = gzip.open('mnist.pkl.gz', 'rb')
-    training_data, validation_data, test_data = cPickle.load(file_to_be_loaded)
+    training_data, validation_data, test_data = pickle.load(file_to_be_loaded, encoding='latin1')
     file_to_be_loaded.close()
 
     return training_data, validation_data, test_data
@@ -47,19 +46,18 @@ def load_formatted_data():
     # The pixel grayscale values represented as a 784 element ndarray
     training_inputs = [np.reshape(digit_image_data, (784,)) for digit_image_data in training_data[0]]
     training_results = [_convert_digit_into_output_vector(digit) for digit in training_data[1]]
-    formatted_training_data = zip(training_inputs, training_results)
+    formatted_training_data = list(zip(training_inputs, training_results))
     # The pixel grayscale values represented as a 784 element ndarray
     validation_inputs = [np.reshape(digit_image_data, (784,)) for digit_image_data in validation_data[0]]
-    formatted_validation_data = zip(validation_inputs, validation_data[1])
+    formatted_validation_data = list(zip(validation_inputs, validation_data[1]))
     # The pixel grayscale values represented as a 784 element ndarray
     test_inputs = [np.reshape(digit_image_data, (784,)) for digit_image_data in test_data[0]]
-    formatted_test_data = zip(test_inputs, test_data[1])
+    formatted_test_data = list(zip(test_inputs, test_data[1]))
 
     return formatted_training_data, formatted_validation_data, formatted_test_data
 
 
-def _convert_digit_into_output_vector(digit):
-    # type: (IntType) -> np.ndarray
+def _convert_digit_into_output_vector(digit: int) -> np.ndarray:
     output_vector = np.zeros((10,))
     output_vector[digit] = 1.0
 

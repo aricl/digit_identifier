@@ -1,4 +1,3 @@
-from types import *
 from hidden_or_output_layer_neuron import HiddenOrOutputLayerNeuron
 from activation_function import sigmoid
 from network import Network
@@ -14,19 +13,12 @@ class NetworkBuilder:
         self._output_neuron_weights = {}
         self._output_neuron_biases = {}
 
-    def add_input_layer(self, number_of_neurons):
-        # type: (IntType) -> NetworkBuilder
-        assert type(number_of_neurons) is IntType, 'The number of input neurons passed is not an integer'
+    def add_input_layer(self, number_of_neurons: int):
         self._number_of_input_neurons = number_of_neurons
 
         return self
 
-    def add_hidden_layer(self, number_of_neurons, hidden_layer_weights, hidden_layer_biases):
-        # type: (int, ListType, ListType) -> NetworkBuilder
-        assert type(number_of_neurons) is IntType, 'The number of hidden layer neurons passed is not an integer'
-        assert type(hidden_layer_weights) is ListType, 'The hidden layer weights passed is not a list'
-        assert type(hidden_layer_biases) is ListType, 'The hidden layer biases passed is not a list'
-
+    def add_hidden_layer(self, number_of_neurons: int, hidden_layer_weights: list, hidden_layer_biases: list):
         if self._number_of_input_neurons is None:
             raise ValueError(
                 "Cannot add a hidden layer before adding an input layer using the add_input_layer method."
@@ -74,12 +66,7 @@ class NetworkBuilder:
 
         return self
 
-    def add_output_layer(self, number_of_neurons, output_layer_weights, output_layer_biases):
-        # type: (int, ListType, ListType) -> NetworkBuilder
-        assert type(number_of_neurons) is IntType, 'The number of output neurons passed is not an integer'
-        assert type(output_layer_weights) is ListType, 'The output layer weights passed is not a list'
-        assert type(output_layer_biases) is ListType, 'The output layer biases passes is not a list'
-
+    def add_output_layer(self, number_of_neurons: int, output_layer_weights: list, output_layer_biases: list):
         output_layer_weights_dimension = len(output_layer_weights[0])
         hidden_layer_key = len(self._hidden_layers_weights) - 1
         number_of_neurons_in_nearest_hidden_layer = len(self._hidden_layers_weights[hidden_layer_key])
@@ -117,7 +104,7 @@ class NetworkBuilder:
                 )
                 for i in range(0, number_of_neurons)
             ]
-            for key, number_of_neurons in self._hidden_layers_distribution.iteritems()
+            for key, number_of_neurons in self._hidden_layers_distribution.items()
         ]
 
         output_layer_neurons = [
