@@ -33,6 +33,12 @@ class Network:
         self._output_layer_neurons = output_layer_neurons
 
     def output(self, input_data: list):
+        """
+        Takes a set of input neuron values and then outputs the corresponding
+        output neuron values for this neural network.
+        :param input_data: list
+        :return: list
+        """
         number_of_neurons_in_previous_layer = len(input_data)
         for hidden_layer in self._hidden_layer_neurons:
             for neuron in hidden_layer:  # type: HiddenOrOutputLayerNeuron
