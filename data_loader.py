@@ -58,6 +58,13 @@ def load_formatted_data():
 
 
 def _convert_digit_into_output_vector(digit: int) -> np.ndarray:
+    """
+    This method takes a unitary integer digit 'n' and then returns an
+    ndarray where the 'n'th element of that ndarray has the value of 1.0
+    and all the other elements have the value 0.0.
+    :param digit:
+    :return: ndarray
+    """
     output_vector = np.zeros((10,))
     output_vector[digit] = 1.0
 
