@@ -1,7 +1,6 @@
 import numpy as np
 
-from error_calculator import calculate_error
-from network_builder import NetworkBuilder
+from cost_function import calculate_cost
 from data_loader import load_formatted_data
 
 
@@ -41,11 +40,9 @@ if __name__ == '__main__':
         for i in range(0, number_of_output_neurons)
     ]
 
-    network = NetworkBuilder() \
-        .add_input_layer(number_of_inputs) \
-        .add_hidden_layer(len(hidden_layer_weights), hidden_layer_weights, hidden_layer_biases) \
-        .add_hidden_layer(len(second_hidden_layer_weights), second_hidden_layer_weights, second_hidden_layer_biases) \
-        .add_output_layer(number_of_output_neurons, output_neuron_weights, output_neuron_biases) \
-        .build_network()
+    cost = calculate_cost(
+        [hidden_layer_weights, second_hidden_layer_weights, output_neuron_weights],
+        [hidden_layer_biases, second_hidden_layer_biases, output_neuron_biases]
+    )
 
-    print(calculate_error(network, training_data))
+    print(cost)
